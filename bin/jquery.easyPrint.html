@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>页面打印</title>
+<link href="//res.layuion.com/layui/v/2.7.5/css/layui.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+/* 页面单独设置的样式 */
+a {
+	color: blue !important;
+}
+
+.setting-css {
+	background-image: linear-gradient(#FFCF02, #FF7352);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; /*需要文字透明*/
+	font-size: 22px;
+}
+</style>
+</head>
+<body>
+	<div style="text-align: center; margin: 0;">
+		<p>
+			我是元素外面的，不需要打印的；3秒后自动打印，如需手动
+			<a href="#" onclick="myPrint()">打印</a>
+		</p>
+	</div>
+	<div id="print-elem">
+		<div style="text-align: center; margin: 20px 0;">
+			<h2>页面打印案例</h2>
+		</div>
+		<blockquote class="layui-elem-quote">一、以下是layui内置样式：</blockquote>
+		<form class="layui-form" action="">
+			<div class="layui-form-item">
+				<label class="layui-form-label">输入框</label>
+				<div class="layui-input-block">
+					<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">密码框</label>
+				<div class="layui-input-inline">
+					<input type="password" name="password" value="" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+				</div>
+				<div class="layui-form-mid layui-word-aux">辅助文字</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择框</label>
+				<div class="layui-input-block">
+					<select name="city">
+						<option value=""></option>
+						<option value="100">北京</option>
+						<option value="200" selected="selected">深圳</option>
+						<option value="300">上海</option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">复选框</label>
+				<div class="layui-input-block">
+					<input type="checkbox" name="like[write]" title="写作" checked>
+					<input type="checkbox" name="like[read]" title="阅读" checked>
+					<input type="checkbox" name="like[dai]" title="发呆">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">开关</label>
+				<div class="layui-input-block">
+					<input type="checkbox" name="switch" lay-skin="switch" checked>
+					<input type="checkbox" name="switch" lay-skin="switch">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">单选框</label>
+				<div class="layui-input-block">
+					<input type="radio" name="sex" value="男" title="男">
+					<input type="radio" name="sex" value="女" title="女" checked>
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">文本域</label>
+				<div class="layui-input-block">
+					<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+			</div>
+		</form>
+		<br />
+		<br />
+		<blockquote class="layui-elem-quote">二、未渲染的表单：</blockquote>
+		<div style="padding: 0 20px;">
+			<div>
+				<input type="text" value="未渲染的表单" />
+			</div>
+			<div>
+				<span>
+					<input type="radio" name="sex111" value="0" />
+					男
+				</span>
+				<span>
+					<input type="radio" name="sex111" value="1" checked="checked" />
+					女
+				</span>
+			</div>
+			<div>
+				<span>
+					<input type="checkbox" name="aihao" value="0" />
+					看书
+				</span>
+				<span>
+					<input type="checkbox" name="aihao" value="1" checked="checked" />
+					羽毛球
+				</span>
+			</div>
+			<div>
+				<select name="address">
+					<option value="1">北京</option>
+					<option value="2" selected="selected">深圳</option>
+				</select>
+			</div>
+			<div>
+				<textarea rows="3" cols="15">未渲染的表单---文本域</textarea>
+			</div>
+		</div>
+		<br />
+		<br />
+
+		<blockquote class="layui-elem-quote">三、以下是图片：</blockquote>
+		<div style="width: 200px; height: 200px;">
+			<img src="http://www.xingxingbao.com/jianbihua/image/201709/2017090515362353.jpg" style="width: 100%;" />
+		</div>
+		<blockquote class="layui-elem-quote">四、以下是SVG：</blockquote>
+		<div style="width: 200px;">
+			<svg viewBox="0 0 79 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+			<linearGradient id="linearGradient-1-2" x1="38.8503086%" y1="0%" x2="61.1496914%" y2="100%">
+			<stop stop-color="#FCFCFD" offset="0%"></stop>
+			<stop stop-color="#EEEFF3" offset="100%"></stop></linearGradient>
+			<linearGradient id="linearGradient-2-2" x1="0%" y1="9.5%" x2="100%" y2="90.5%">
+			<stop stop-color="#FCFCFD" offset="0%"></stop>
+			<stop stop-color="#E9EBEF" offset="100%"></stop></linearGradient>
+			<rect id="path-3-2" x="0" y="0" width="17" height="36"></rect></defs>
+			<g id="Illustrations" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g id="B-type" transform="translate(-1268.000000, -535.000000)">
+			<g id="Group-2" transform="translate(1268.000000, 535.000000)">
+			<path id="Oval-Copy-2"
+					d="M39.5,86 C61.3152476,86 79,83.9106622 79,81.3333333 C79,78.7560045 57.3152476,78 35.5,78 C13.6847524,78 0,78.7560045 0,81.3333333 C0,83.9106622 17.6847524,86 39.5,86 Z"
+					fill="#F7F8FC"></path>
+			<polygon id="Rectangle-Copy-14" fill="#E5E7E9" transform="translate(27.500000, 51.500000) scale(1, -1) translate(-27.500000, -51.500000) " points="13 58 53 58 42 45 2 45"></polygon>
+			<g id="Group-Copy" transform="translate(34.500000, 31.500000) scale(-1, 1) rotate(-25.000000) translate(-34.500000, -31.500000) translate(7.000000, 10.000000)">
+			<polygon id="Rectangle-Copy-10" fill="#E5E7E9" transform="translate(11.500000, 5.000000) scale(1, -1) translate(-11.500000, -5.000000) " points="2.84078316e-14 3 18 3 23 7 5 7"></polygon>
+			<polygon id="Rectangle-Copy-11" fill="#EDEEF2" points="-3.69149156e-15 7 38 7 38 43 -3.69149156e-15 43"></polygon>
+			<rect id="Rectangle-Copy-12" fill="url(#linearGradient-1-2)" transform="translate(46.500000, 25.000000) scale(-1, 1) translate(-46.500000, -25.000000) " x="38" y="7" width="17"
+					height="36"></rect>
+			<polygon id="Rectangle-Copy-13" fill="#F8F9FB" transform="translate(39.500000, 3.500000) scale(-1, 1) translate(-39.500000, -3.500000) "
+					points="24 7 41 7 55 -3.63806207e-12 38 -3.63806207e-12"></polygon></g>
+			<rect id="Rectangle-Copy-15" fill="url(#linearGradient-2-2)" x="13" y="45" width="40" height="36"></rect>
+			<g id="Rectangle-Copy-17" transform="translate(53.000000, 45.000000)">
+			<mask id="mask-4-2" fill="white">
+			<use xlink:href="#path-3-2"></use></mask>
+			<use id="Mask" fill="#E0E3E9" transform="translate(8.500000, 18.000000) scale(-1, 1) translate(-8.500000, -18.000000) " xlink:href="#path-3-2"></use>
+			<polygon id="Rectangle-Copy" fill="#D5D7DE" mask="url(#mask-4-2)" transform="translate(12.000000, 9.000000) scale(-1, 1) translate(-12.000000, -9.000000) "
+					points="7 0 24 0 20 18 -1.70530257e-13 16"></polygon></g>
+			<polygon id="Rectangle-Copy-18" fill="#F8F9FB" transform="translate(66.000000, 51.500000) scale(-1, 1) translate(-66.000000, -51.500000) " points="62 45 79 45 70 58 53 58"></polygon></g></g></g></svg>
+		</div>
+		<br />
+		<br />
+		<blockquote class="layui-elem-quote">五、以下是canvas：</blockquote>
+		<div style="padding: 0 20px;">
+			<canvas id="canvas_1" style="box-shadow: 0px 0px 2px black; background: #eee; width: 200px; height: 100px;">
+        		当前浏览器不支持 canvas
+   			</canvas>
+		</div>
+		<br />
+		<br />
+		<blockquote class="layui-elem-quote">六、以下是a标签：</blockquote>
+		<div style="padding: 0 20px;">
+			<p>
+				<a href="https://www.w3schools.cn/css/css_text_spacing.asp">CSS 文本间距，[www.w3schools.cn]地址 </a>
+			</p>
+			<p>
+				<a href="https://www.w3schools.cn/css/css_text_spacing.asp">CSS 文本间距，[www.w3schools.cn]地址 </a>
+			</p>
+			<p>
+				<a href="https://www.w3schools.cn/css/css_text_spacing.asp">CSS 文本间距，[www.w3schools.cn]地址 </a>
+			</p>
+			<div class="setting-css">页面单独设置的样式：渐变色，超大字</div>
+		</div>
+		<br />
+		<br />
+		<blockquote class="layui-elem-quote no-print">九、我是额外的不需要打印的：</blockquote>
+		<div class="no-print" style="padding: 0 20px;">
+			<p>我是额外的不需要打印的</p>
+			<p>我是额外的不需要打印的</p>
+			<p>我是额外的不需要打印的</p>
+		</div>
+		<div style="position: fixed; top: 30px; right: 30px; background: #eee;">位于元素内部的绝对定位，需要打印！</div>
+	</div>
+	<br />
+	<hr />
+	<p>注意：我是元素外面的，不需要打印的</p>
+	<p>注意：我是元素外面的，不需要打印的</p>
+	<p>注意：我是元素外面的，不需要打印的</p>
+	<div style="position: fixed; bottom: 30px; right: 30px; background: #aaa;">绝对定位，不要打印！</div>
+</body>
+<script type="text/javascript" src="//www.jq22.com/jquery/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="//res.layuion.com/layui/v/2.7.5/layui.js"></script>
+<script type="text/javascript" src="./jquery.easyPrint.min.js"></script>
+<script type="text/javascript">
+	layui.use([ 'form', 'layer' ], function() {
+		var form = layui.form;
+		var layer = layui.layer;
+
+		//1.获取 canvas 元素对应的 DOM 对象
+		var c = document.getElementById("canvas_1");
+
+		//2.获取在 canvas 上绘图的 canvasRenderingContent2D 对象。这两行是必不可少的哦
+		var ctx = c.getContext("2d");
+
+		//3.绘制
+		ctx.beginPath();//开始绘制
+		ctx.arc(95, 50, 40, 0, 2 * Math.PI);//arc 的意思是“弧”
+		ctx.strokeStyle = "blue";//将线条颜色设置为蓝色
+		ctx.stroke();//stroke() 方法默认颜色是黑色（如果没有上面一行，则会是黑色）。
+
+		//3.绘制
+		ctx.beginPath();//开始绘制
+		ctx.arc(95, 50, 40, 0, 2 * Math.PI);//arc 的意思是“弧”
+		ctx.fillStyle = "#ff0";//设置填充颜色
+		ctx.fill();//开始填充
+		ctx.strokeStyle = "blue";//将线条颜色设置为蓝色
+		ctx.stroke();//stroke() 方法默认颜色是黑色（如果没有上面一行，则会是黑色）。
+
+		layer.msg('3秒后自动调用打印.....');
+		setTimeout(myPrint, 3000);
+	});
+
+	function myPrint() {
+		console.clear();
+		console.log('开启打印emmmmm...........');
+		var $elem = $('#print-elem');
+		$elem.easyPrint({
+			useIframe : true,// 是否使用iframe的方式（默认为true，会优先使用iframe，不兼容的情况下还是会用open的方式）
+			size : '', // 打印的纸张大小，可以是A4，也可以是尺寸'4in 6in'
+			direction : 'portrait',// 打印方向portrait，landscape
+			className : '', // 打印页面最外层的class属性，支持自定义后定义其样式
+			globalStyles : true, // 是否包含来自父文档的样式（style,link）,[true],false,'style','link'
+			mediaPrint : true,// 在globalStyles为false的情况下，单独设置是否包含media='print'的链接标签,[true],false,'style','link'
+			printCss : '',// 打印时的额外css样式
+			stylesheet : null, // 打印时要包含的外部样式表的URL
+			noPrintSelector : ".no-print",
+			appendHtml : null, // 在选定内容之前(前置)或之后(追加)添加自定义HTML
+			prependHtml : null, // 在选定内容之前(前置)或之后(追加)添加自定义HTML
+			title : '这是标题呀', // 更改打印的标题，默认使用页面标题（即<title>元素）
+			doctype : '<!doctype html>', // 在打印的文档框架前添加文档类型
+			printColor : 'exact', // 背景图形 exact或economy
+			printTagA : true,// 是否打印a标签内容
+			groupTableHeader : true,// 分组表格表头，即是否将表头同步至每一页，当一页打不下表格时。
+			groupTableFooter : true,// 分组表格表尾，即是否将表尾同步至每一页，当一页打不下表格时。
+			beforePrint : null, // 打印前回调，返回iframe对象，或open对象
+			afterPrint : null, // 打印完成回调，返回用时（毫秒）
+			// 			module : {
+			// 				key : 'byA4'
+			// 			},
+		});
+	}
+</script>
+</html>
