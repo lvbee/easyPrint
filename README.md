@@ -1,5 +1,10 @@
 # jQuery.EasyPrint.js使用文档
 
+原生JS打印插件之jQuery.EasyPrint.js使用文档
+调用浏览器自带打印功能，使用JavaScript的 window.print(); 方法。
+
+自主研发的一个轻量级超简单的js打印插件。
+
 ## 一、示例：
 
 ```js
